@@ -2,6 +2,15 @@
 
 雅思备考 AI 教练系统，适用于支持 Agent Skills 的 AI 编辑器（如 Warp、Cursor、Claude Code 等）。
 
+## v3.0 架构
+
+每个 skill 目录下有两个文件：
+
+- **`SKILL.md`** — 执行流程（<150 行）。顶部有「执行流程总览」锚点，末尾是**强制 Phase：持久化 + 回执**（「不输出回执 = 任务未完成」）。
+- **`REFERENCE.md`** — 评分表、题型详表、话题库、模板、陷阱表等参考资料。按需查阅，不常驻上下文。
+
+拆分后 SKILL.md 专注流程，避免长上下文导致 AI 忘记写文件；REFERENCE.md 承载细节，AI 用到时才读。
+
 ## Skills 列表
 
 | Skill | 功能 |
@@ -16,7 +25,7 @@
 ## Quickstart
 
 ### 1. 安装
-把 6 个 skill 目录放到你 AI 编辑器的 skill 加载路径下。
+把 6 个 skill 目录（每个含 `SKILL.md` + `REFERENCE.md`）放到 AI 编辑器的 skill 加载路径下。
 
 **Warp / Claude Code** 默认路径：
 ```bash
